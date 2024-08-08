@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name=".vscode">
+      </df>
+      <df name="compiler">
+        <in>TCodeDispatcher.h</in>
+        <in>VMarg.cpp</in>
+        <in>VMarg.h</in>
+        <in>alpha_lexer.cpp</in>
+        <in>alpha_parser.cpp</in>
+        <in>alpha_parser.hpp</in>
+        <in>alpha_yyFlexLexer.cpp</in>
+        <in>alpha_yyFlexLexer.h</in>
+        <in>ap.cpp</in>
+        <in>defines_header.h</in>
+        <in>error_handler.cpp</in>
+        <in>error_handler.h</in>
+        <in>expression.cpp</in>
+        <in>expression.h</in>
+        <in>function_actions.cpp</in>
+        <in>function_actions.h</in>
+        <in>infoStorage.cpp</in>
+        <in>instruction.cpp</in>
+        <in>instruction.h</in>
+        <in>instruction_generators.cpp</in>
+        <in>instruction_generators.h</in>
+        <in>instructiontable.cpp</in>
+        <in>instructiontable.h</in>
+        <in>quads.h</in>
+        <in>quadtable.cpp</in>
+        <in>quadtable.h</in>
+        <in>symtable.cpp</in>
+        <in>symtable.h</in>
+        <in>tempManagement.cpp</in>
+        <in>tempManagement.h</in>
+      </df>
+      <df name="p5tests">
+      </df>
+      <df name="random stuff">
+      </df>
+      <in>AVM.cpp</in>
+      <in>AVM.h</in>
+      <in>AVM_MemCell.cpp</in>
+      <in>AVM_MemCell.h</in>
+      <in>AVM_Table.cpp</in>
+      <in>AVM_Table.h</in>
+      <in>AVM_libfuncs.cpp</in>
+      <in>AVM_main.cpp</in>
+      <in>VMarg.cpp</in>
+      <in>VMarg.h</in>
+      <in>error_handler.cpp</in>
+      <in>error_handler.h</in>
+      <in>execute_arithmetic.cpp</in>
+      <in>execute_assign.cpp</in>
+      <in>execute_functions.cpp</in>
+      <in>execute_jumps.cpp</in>
+      <in>execute_nop.cpp</in>
+      <in>execute_tables.cpp</in>
+      <in>instruction.cpp</in>
+      <in>instruction.h</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH} ~/media/sf_HY-340/projectAgain/hy340_project/Alpha_Compiler/P5_Runtime_Environment"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH} "</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH} geia"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH} testout.abc"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" test1.abc</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" Circe.asc</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" a.abc</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" vavouris.asc</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" compiler/test.abc</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}" compiler/test.abc</runcommand>
+        <arguments>compiler/test.abc</arguments>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <console-type>1</console-type>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

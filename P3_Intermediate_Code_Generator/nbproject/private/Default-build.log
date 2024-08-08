@@ -1,0 +1,57 @@
+bison --yacc alpha_parser.y
+alpha_parser.y:30.1-9: warning: deprecated directive, use ‘%output’ [-Wdeprecated]
+ %output = "alpha_parser.cpp"
+ ^^^^^^^^^
+alpha_parser.y:125.25-51: warning: type clash on default action: <exprValue> != <> [-Wother]
+ term:			LEFT_PAREN expr RIGHT_PAREN 
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+alpha_parser.y:126.35-57: warning: type clash on default action: <exprValue> != <> [-Wother]
+ 				| MINUS expr %prec UMINUS 
+                                   ^^^^^^^^^^^^^^^^^^^^^^^
+alpha_parser.y:127.35-42: warning: type clash on default action: <exprValue> != <> [-Wother]
+ 				| NOT expr 
+                                   ^^^^^^^^
+alpha_parser.y:142.35-38: warning: type clash on default action: <exprValue> != <> [-Wother]
+ 				| call
+                                   ^^^^
+alpha_parser.y:143.35-43: warning: type clash on default action: <exprValue> != <> [-Wother]
+ 				| objectdef
+                                   ^^^^^^^^^
+alpha_parser.y:144.35-64: warning: type clash on default action: <exprValue> != <> [-Wother]
+ 				| LEFT_PAREN funcdef RIGHT_PAREN
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+alpha_parser.y:176.35-70: warning: type clash on default action: <exprValue> != <> [-Wother]
+ 				| call LEFT_BRACKET expr RIGHT_BRACKET 
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+alpha_parser.y: warning: 1 shift/reduce conflict [-Wconflicts-sr]
+flex yyalpha.l 
+g++ -Wall -std=c++11 -c alpha_lexer.cpp
+alpha_lexer.cpp: In member function ‘virtual int alpha_yyFlexLexer::yylex()’:
+alpha_lexer.cpp:744:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for ( yyl = 0; yyl < yyleng; ++yyl )
+                       ^
+alpha_lexer.cpp: In member function ‘int yyFlexLexer::yy_get_next_buffer()’:
+alpha_lexer.cpp:1815:44: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ((int) ((yy_n_chars) + number_to_move) > YY_CURRENT_BUFFER_LVALUE->yy_buf_size) {
+                                            ^
+g++ -Wall -std=c++11 -c alpha_parser.cpp 
+alpha_parser.cpp: In function ‘int yyparse()’:
+alpha_parser.cpp:1869:35: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+       yyerror (YY_("syntax error"));
+                                   ^
+alpha_parser.cpp:2013:35: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+   yyerror (YY_("memory exhausted"));
+                                   ^
+g++ -Wall -std=c++11 -c alpha_yyFlexLexer.cpp
+g++ -Wall -std=c++11 -c symtable.cpp infoStorage.cpp
+g++ -Wall -std=c++11 -c function_actions.cpp	
+g++ -Wall -std=c++11 -c error_handler.cpp
+error_handler.cpp: In function ‘void error(ErrorType, size_t, const char*, ...)’:
+error_handler.cpp:28:48: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 4 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+  fprintf(stderr, BON "%s:%u:" BOFF, fname, line);
+                                                ^
+g++ -Wall -std=c++11 -c tempManagement.cpp
+g++ -Wall -std=c++11 -c quadtable.cpp
+g++ -Wall -std=c++11 -c expression.cpp
+g++ -Wall -std=c++11 alpha_lexer.o alpha_parser.o alpha_yyFlexLexer.o ap.cpp symtable.o infoStorage.o function_actions.o error_handler.o tempManagement.o quadtable.o expression.o -o ap.out 
+rm -f *.o

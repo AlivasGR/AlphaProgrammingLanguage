@@ -1,0 +1,21 @@
+/*******************************************
+ * THIS IS A TEST PROGRAM FOR ALPHA_LEXER  *
+ * /* 									   *
+ *  / This function prints Hello World i / *
+ *          /and then a new line/	       *
+ *   /*	  where i goes from 0 to 99   */   *
+ * */									   *
+ * THIS IS A TEST PROGRAM FOR APLPHA_LEXER *
+ *******************************************/
+function testFunc() {
+	//loop from 0 to 99 /* ++ denotes step +1 */
+	for (var i = 0; i < 100; i++) {
+		print("Hello World " + i + "\n"); //call function print with string argument, + is overloaded for strings
+		print("foo 
+
+		
+			   bar");
+	}
+}
+
+//end of program
